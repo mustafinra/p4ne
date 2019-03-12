@@ -16,7 +16,10 @@ list_x = list(map(getvalue, sheet['A'][1:]))
 
 list_y = list(map(getvalue, sheet['B'][1:]))
 
-pyplot.plot(list(map(getvalue, sheet['A'][1:])), list(map(getvalue, sheet['C'][1:])), label="Метка 1")
-pyplot.plot(list(map(getvalue, sheet['A'][1:])), list(map(getvalue, sheet['D'][1:])), label="Метка 2")
-pyplot.plot(list(map(getvalue, sheet['A'][1:])), list(map(getvalue, sheet['B'][1:])), label="Label 3")
+pyplot.xlabel('Годы')
+pyplot.ylabel('Активность и температура')
+pyplot.plot(list(map(getvalue, sheet['A'][1:])), list(map(getvalue, sheet['C'][1:])), label=getvalue(sheet['C'][0]))
+pyplot.plot(list(map(getvalue, sheet['A'][1:])), list(map(getvalue, sheet['D'][1:])), label=getvalue(sheet['D'][0]))
+pyplot.plot(list(map(getvalue, sheet['A'][1:])), list(map(getvalue, sheet['B'][1:])), label=getvalue(sheet['B'][0]))
+pyplot.legend(loc='upper left')
 pyplot.show()
